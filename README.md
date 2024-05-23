@@ -1,29 +1,47 @@
-# fibonacci
-.
-.
-In mathematics, the Fibonacci numbers, commonly denoted Fn, form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from 0 and 1. That is,[1]
+I'd be glad to create a README.md file for the provided code:
 
+**Fibonacci Sequence Calculator**
 
-A tiling with squares whose side lengths are successive Fibonacci numbers: 1, 1, 2, 3, 5, 8, 13 and 21.
-{\displaystyle F_{0}=0,\quad F_{1}=1,}{\displaystyle F_{0}=0,\quad F_{1}=1,}
-and
+This Python program calculates the nth Fibonacci number using recursion.
 
-{\displaystyle F_{n}=F_{n-1}+F_{n-2},}{\displaystyle F_{n}=F_{n-1}+F_{n-2},}
-for n > 1.
+**What is the Fibonacci Sequence?**
 
-The beginning of the sequence is thus:
+The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding numbers. The first two numbers in the sequence are conventionally 0 and 1. Here are the first few Fibonacci numbers:
 
-{\displaystyle 0,\;1,\;1,\;2,\;3,\;5,\;8,\;13,\;21,\;34,\;55,\;89,\;144,\;\ldots }{\displaystyle 0,\;1,\;1,\;2,\;3,\;5,\;8,\;13,\;21,\;34,\;55,\;89,\;144,\;\ldots }[2]
-In some older books, the value {\displaystyle F_{0}=0}F_{0}=0 is omitted, so that the sequence starts with {\displaystyle F_{1}=F_{2}=1,}{\displaystyle F_{1}=F_{2}=1,} and the recurrence {\displaystyle F_{n}=F_{n-1}+F_{n-2}}{\displaystyle F_{n}=F_{n-1}+F_{n-2}} is valid for n > 2.[3][4]
+```
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
+```
 
+**How to Use This Program**
 
-The Fibonacci spiral: an approximation of the golden spiral created by drawing circular arcs connecting the opposite corners of squares in the Fibonacci tiling; (see preceding image)
-Fibonacci numbers are strongly related to the golden ratio: Binet's formula expresses the nth Fibonacci number in terms of n and the golden ratio, and implies that the ratio of two consecutive Fibonacci numbers tends to the golden ratio as n increases.
+1. **Run the program:** Save the code as a Python file (e.g., `fibonacci.py`). Then, open your terminal or command prompt, navigate to the directory where you saved the file, and run the following command:
 
-Fibonacci numbers are named after Italian mathematician Leonardo of Pisa, later known as Fibonacci. In his 1202 book Liber Abaci, Fibonacci introduced the sequence to Western European mathematics,[5] although the sequence had been described earlier in Indian mathematics,[6][7][8] as early as 200 BC in work by Pingala on enumerating possible patterns of Sanskrit poetry formed from syllables of two lengths.
+   ```bash
+   python fibonacci.py
+   ```
 
-Fibonacci numbers appear unexpectedly often in mathematics, so much so that there is an entire journal dedicated to their study, the Fibonacci Quarterly. Applications of Fibonacci numbers include computer algorithms such as the Fibonacci search technique and the Fibonacci heap data structure, and graphs called Fibonacci cubes used for interconnecting parallel and distributed systems.
+2. **Enter a non-negative integer:** The program will prompt you to enter a non-negative integer (n). This represents the position of the Fibonacci number you want to calculate. For example, if you enter 5, the program will return 5 (the fifth Fibonacci number).
 
-They also appear in biological settings, such as branching in trees, the arrangement of leaves on a stem, the fruit sprouts of a pineapple, the flowering of an artichoke, an uncurling fern, and the arrangement of a pine cone's bracts.
+**Example:**
 
-Fibonacci numbers are also closely related to Lucas numbers {\displaystyle L_{n}}L_{n}, in that the Fibonacci and Lucas numbers form a complementary pair of Lucas sequences: {\displaystyle U_{n}(1,-1)=F_{n}}U_{n}(1,-1)=F_{n} and {\displaystyle V_{n}(1,-1)=L_{n}}V_{n}(1,-1)=L_{n}.
+```
+Enter a non-negative integer: 8
+34
+```
+
+**Error Handling**
+
+- If you enter a negative number, the program will display an error message indicating "Incorrect input."
+- If you enter a non-numeric value, the program will display an error message indicating "Invalid input. Please enter a non-negative integer."
+
+**Code Explanation**
+
+The code defines a recursive function `Fibonacci(n)` that calculates the nth Fibonacci number. The function works as follows:
+
+- **Base cases:**
+  - If `n` is 0, the function returns 0 (the first Fibonacci number).
+  - If `n` is 1, the function returns 1 (the second Fibonacci number).
+- **Recursive case:**
+  - For `n` greater than 1, the function calculates the nth Fibonacci number by recursively calling itself with `n-1` and `n-2` (the previous two Fibonacci numbers) and adding their results.
+
+The driver program prompts the user for input, handles potential errors, and calls the `Fibonacci(n)` function to calculate and print the result.
