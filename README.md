@@ -1,47 +1,86 @@
-I'd be glad to create a README.md file for the provided code:
+# Fibonacci Number Calculator
 
-**Fibonacci Sequence Calculator**
+This is a simple Python program that calculates the nth Fibonacci number using a recursive function. The program prompts the user to input a non-negative integer and then computes the corresponding Fibonacci number.
 
-This Python program calculates the nth Fibonacci number using recursion.
+## Table of Contents
 
-**What is the Fibonacci Sequence?**
+- [Features](#features)
+- [Requirements](#requirements)
+- [Usage](#usage)
+- [Code Explanation](#code-explanation)
+- [Example](#example)
+- [Acknowledgements](#acknowledgements)
 
-The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding numbers. The first two numbers in the sequence are conventionally 0 and 1. Here are the first few Fibonacci numbers:
+## Features
 
-```
-0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...
-```
+- Computes the nth Fibonacci number.
+- Validates user input to ensure it is a non-negative integer.
+- Provides error messages for incorrect inputs.
 
-**How to Use This Program**
+## Requirements
 
-1. **Run the program:** Save the code as a Python file (e.g., `fibonacci.py`). Then, open your terminal or command prompt, navigate to the directory where you saved the file, and run the following command:
+- Python 3.7.1 or later.
 
-   ```bash
+## Usage
+
+1. **Clone the repository** or **download the script** to your local machine.
+2. **Open a terminal or command prompt** and navigate to the directory containing the script.
+3. **Run the script** using the following command:
+   ```sh
    python fibonacci.py
    ```
 
-2. **Enter a non-negative integer:** The program will prompt you to enter a non-negative integer (n). This represents the position of the Fibonacci number you want to calculate. For example, if you enter 5, the program will return 5 (the fifth Fibonacci number).
+### Example
 
-**Example:**
-
+```sh
+~$ python fibonacci.py
+Enter a non-negative integer: 10
+55
 ```
-Enter a non-negative integer: 8
-34
+
+## Code Explanation
+
+### Fibonacci Function
+
+```python
+def Fibonacci(n):
+    """
+    Function to return the nth Fibonacci number.
+    """
+    if n < 0:
+        return "Incorrect input"  # Handle negative input
+
+    # Base cases
+    elif n == 0:
+        return 0
+    elif n == 1:
+        return 1
+
+    else:
+        # Recursive case
+        return Fibonacci(n - 1) + Fibonacci(n - 2)
 ```
 
-**Error Handling**
+- **Input Handling**: The function checks if `n` is a negative number and returns an error message if so.
+- **Base Cases**: If `n` is 0 or 1, the function returns 0 or 1 respectively.
+- **Recursive Case**: For other values, the function recursively calculates the Fibonacci number.
 
-- If you enter a negative number, the program will display an error message indicating "Incorrect input."
-- If you enter a non-numeric value, the program will display an error message indicating "Invalid input. Please enter a non-negative integer."
+### Driver Program
 
-**Code Explanation**
+```python
+# Driver Program
+try:
+    n = int(input("Enter a non-negative integer: "))
+    print(Fibonacci(n))
+except ValueError:
+    print("Invalid input. Please enter a non-negative integer.")
+```
 
-The code defines a recursive function `Fibonacci(n)` that calculates the nth Fibonacci number. The function works as follows:
+- **Input Prompt**: The program prompts the user to enter a non-negative integer.
+- **Error Handling**: A `try-except` block is used to handle invalid inputs gracefully, ensuring that only non-negative integers are accepted.
 
-- **Base cases:**
-  - If `n` is 0, the function returns 0 (the first Fibonacci number).
-  - If `n` is 1, the function returns 1 (the second Fibonacci number).
-- **Recursive case:**
-  - For `n` greater than 1, the function calculates the nth Fibonacci number by recursively calling itself with `n-1` and `n-2` (the previous two Fibonacci numbers) and adding their results.
+## Acknowledgements
 
-The driver program prompts the user for input, handles potential errors, and calls the `Fibonacci(n)` function to calculate and print the result.
+This program provides a simple implementation of the Fibonacci sequence calculation. It is an educational tool for learning about recursion and input validation in Python.
+
+Thank you for using the Fibonacci Number Calculator. If you find this tool useful, please share it with others and consider giving feedback.
