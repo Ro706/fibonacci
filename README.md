@@ -19,7 +19,7 @@ This is a simple Python program that calculates the nth Fibonacci number using a
 
 ## Requirements
 
-- Python 3.7.1 or later.
+- Python 3.12.9 or later.
 
 ## Usage
 
